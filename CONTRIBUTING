@@ -1,0 +1,24 @@
+# Beitrag zum Projekt
+
+## Aufgaben und Verbesserungen
+
+- Neue Features, Bugreports oder Änderungswünsche bitte als Issue anlegen.
+- Nutze dabei die vorhandenen Issue-Templates (Feature, Bug, Verbesserung).
+- Jede Änderung wird im CHANGELOG.md dokumentiert.
+- Der Workflow: Issue → Diskussion → Umsetzung (PR oder Commit) → Changelog-Eintrag.
+
+## Zusammenarbeit mit Copilot Agents
+
+- Du kannst direkt über die Chat-Funktionalität Aufgaben beschreiben.
+- Der Agent erstellt daraus Issues oder Pull Requests.
+- Änderungswünsche/Verbesserungen immer so konkret wie möglich formulieren.
+
+## Codestil & Hinweise
+
+- Pine-Skripte möglichst sauber und lesbar kommentieren.
+- LuxAlgo-Ausgaben werden gelesen, nicht neu berechnet.
+- UI soll kompakt und übersichtlich bleiben.
+
+## Lizenz
+
+- Dieses Projekt ist Open Source.
