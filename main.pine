@@ -17,13 +17,13 @@ timeframes = array.from("1", "5", "15", "60")
 trend_colors = array.new_color()
 for tf in timeframes
     // LuxAlgo Trend: placeholder (hier sollte LuxAlgo Trend-Output eingelesen werden)
-    trend = na // TODO: LuxAlgo Trend Signal für tf einlesen (bullish/bearish/neutral)
-    color = trend == "bullish" ? color.green : trend == "bearish" ? color.red : color.gray
-    array.push(trend_colors, color)
+    string trend = na // TODO: LuxAlgo Trend Signal für tf einlesen (bullish/bearish/neutral)
+    color col = trend == "bullish" ? color.green : trend == "bearish" ? color.red : color.gray
+    array.push(trend_colors, col)
 
 // Visualisierung (Platzhalter, Anpassung folgt)
-box_width = 65
-box_height = 30
+int box_width = 65
+int box_height = 30
 for i = 0 to array.size(timeframes) - 1
     label.new(x=bar_index, y=high + (i+1)*syminfo.mintick, text=array.get(timeframes, i)+"m", color=array.get(trend_colors, i), style=label.style_label_down, size=size.small)
 
@@ -33,18 +33,31 @@ for i = 0 to array.size(timeframes) - 1
 var table dashboard = table.new(position=position.top_right, columns=6, rows=8, bgcolor=color.new(color.black, 80))
 
 // Platzhalter für LuxAlgo-Signale (hier später als Input einlesen)
-liq_grab = na  // true/false je nach Signal von LuxAlgo
-choch     = na
-orderblock = na
-fvg       = na
+bool liq_grab = na  // true/false je nach Signal von LuxAlgo
+bool choch     = na
+bool orderblock = na
+bool fvg       = na
+
+// Für bessere Demo-Zwecke: Default-Werte verwenden wenn na
+bool liq_grab_display = na(liq_grab) ? false : liq_grab
+bool choch_display = na(choch) ? false : choch  
+bool orderblock_display = na(orderblock) ? false : orderblock
+bool fvg_display = na(fvg) ? false : fvg
 
 // Matrix befüllen – Beispiel für Long-Setup
 table.cell(dashboard, 0, 0, "Long-Setup", text_color=color.green, bgcolor=color.new(color.green, 90))
-table.cell(dashboard, 0, 1, liq_grab ? "✅ Liquidity Grab" : "❌ Liquidity Grab", text_color=liq_grab ? color.green : color.red)
-table.cell(dashboard, 0, 2, choch ? "✅ CHoCH" : "❌ CHoCH", text_color=choch ? color.green : color.red)
-table.cell(dashboard, 0, 3, orderblock ? "✅ OB" : "❌ OB", text_color=orderblock ? color.green : color.red)
-table.cell(dashboard, 0, 4, fvg ? "✅ FVG" : "❌ FVG", text_color=fvg ? color.green : color.red)
-// ... analog für Short-Setup
+table.cell(dashboard, 0, 1, liq_grab_display ? "✅ Liquidity Grab" : "❌ Liquidity Grab", text_color=liq_grab_display ? color.green : color.red)
+table.cell(dashboard, 0, 2, choch_display ? "✅ CHoCH" : "❌ CHoCH", text_color=choch_display ? color.green : color.red)
+table.cell(dashboard, 0, 3, orderblock_display ? "✅ OB" : "❌ OB", text_color=orderblock_display ? color.green : color.red)
+table.cell(dashboard, 0, 4, fvg_display ? "✅ FVG" : "❌ FVG", text_color=fvg_display ? color.green : color.red)
+
+// Short-Setup analog
+if show_short
+    table.cell(dashboard, 1, 0, "Short-Setup", text_color=color.red, bgcolor=color.new(color.red, 90))
+    table.cell(dashboard, 1, 1, liq_grab_display ? "✅ Liquidity Grab" : "❌ Liquidity Grab", text_color=liq_grab_display ? color.green : color.red)
+    table.cell(dashboard, 1, 2, choch_display ? "✅ CHoCH" : "❌ CHoCH", text_color=choch_display ? color.green : color.red)
+    table.cell(dashboard, 1, 3, orderblock_display ? "✅ OB" : "❌ OB", text_color=orderblock_display ? color.green : color.red)
+    table.cell(dashboard, 1, 4, fvg_display ? "✅ FVG" : "❌ FVG", text_color=fvg_display ? color.green : color.red)
 
 //
 // === SETUP HISTORY (PLATZHALTER) ===
