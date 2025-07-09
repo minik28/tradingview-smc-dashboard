@@ -1,0 +1,25 @@
+name: Bug Report
+description: Fehler oder unerwartetes Verhalten melden
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Beschreibe den Fehler**
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Fehlerbeschreibung
+      description: Was ist passiert? Was hast du erwartet?
+      placeholder: Fehlerbeschreibung...
+    validations:
+      required: true
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Reproduktionsschritte
+      description: Wie lässt sich der Fehler reproduzieren?
+      placeholder: Schritte zur Reproduktion...
+    validations:
+      required: false
