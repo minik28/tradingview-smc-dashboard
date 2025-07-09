@@ -1,0 +1,7 @@
+# Changelog
+
+## [0.1.0] – 2025-07-09
+### Added
+- Initiale Projektstruktur erstellt
+- README, Changelog und Contributing hinzugefügt
+- Pine Script Grundgerüst (main.pine) mit Dashboard-Layout und Platzhaltern
