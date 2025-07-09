@@ -1,0 +1,17 @@
+name: Verbesserungsidee
+description: Vorschlag für eine Verbesserung am bestehenden Code/UI
+title: "[Enhancement] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Beschreibe deine Verbesserung**
+  - type: textarea
+    id: enhancement_description
+    attributes:
+      label: Verbesserungs-Beschreibung
+      description: Was soll optimiert werden? Warum?
+      placeholder: Beschreibung...
+    validations:
+      required: true
