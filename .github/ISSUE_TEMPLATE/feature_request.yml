@@ -1,0 +1,25 @@
+name: Feature Request
+description: Vorschlag für ein neues Feature oder eine Verbesserung
+title: "[Feature] "
+labels: ["feature", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Beschreibe dein gewünschtes Feature**
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature-Beschreibung
+      description: Was soll das Feature können? Warum ist es nützlich?
+      placeholder: Deine Beschreibung...
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Kontext
+      description: Gibt es einen bestimmten Chart, eine Regel oder ein Beispiel?
+      placeholder: Kontext oder Beispiel...
+    validations:
+      required: false
